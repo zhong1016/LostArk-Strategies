@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+#root {
+  height: 100%;
+  width: 100%;
+  color: white;
+}
+.ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline {
+  background: none;
+}
+.ant-menu-submenu-title {
+  margin: 0 !important;
+}
