@@ -1,5 +1,17 @@
-const LAS = () => {
-  return <h1>Hello World</h1>;
+const LostArkStrategies = () => {
+  return (
+    <div className=' flex flex-wrap justify-center'>
+      <div className='w-full xl:w-1/2 mt-4'>
+        <ul>
+          <li>test</li>
+          <li>test</li>
+          <li>test</li>
+          <li>test</li>
+          <li>test</li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
-export default LAS;
+export default LostArkStrategies;

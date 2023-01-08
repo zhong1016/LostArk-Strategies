@@ -1,18 +1,21 @@
 import { useEffect } from 'react';
+import useQuery from './component/api/query';
+import { favorabilityIn } from './component/favorability/interface';
 import Routes from './route/index';
 import Content from './view/layout/TheContent';
 
 const App = () => {
+  /**
+   * hook
+   */
+  const { api, get } = useQuery();
+
   useEffect(() => {
     init();
   }, []);
 
-  const init = () => {
-    fetch('/public/api/v1/test/user.json')
-      .then((r) => r.json())
-      .then((data) => {
-        console.log(data);
-      });
+  const init = async () => {
+    let res = await get<favorabilityIn[]>(api.favorabilities);
   };
   return <Content component={<Routes />} />;
 };
