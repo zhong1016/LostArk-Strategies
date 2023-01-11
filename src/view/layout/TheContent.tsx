@@ -1,30 +1,78 @@
-import React from 'react';
+import { MenuOutlined } from '@ant-design/icons';
+import { Button, Drawer } from 'antd';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Sidebar from './TheSidebar';
+
 interface ContentIn {
-  component: React.ReactNode;
+  Component: React.ReactNode;
 }
 
-const Content: React.FC<ContentIn> = ({ component }: ContentIn) => {
+const Content: React.FC<ContentIn> = ({ Component }: ContentIn) => {
+  /**
+   * hook
+   */
+  const navigate = useNavigate();
+  /**
+   * state
+   */
+  const [open, setOpen] = useState(false);
+  /**
+   * func
+   */
+  const onHref = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    navigate('/LostArk-Strategies/');
+    e.preventDefault();
+  };
+  const onMenu = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    setOpen(true);
+    e.preventDefault();
+  };
+
   return (
     <div className='w-full h-full flex '>
-      <aside className='h-full w-48 '>
+      <aside className='h-full w-48 hidden xl:block'>
         <div className='h-10 w-full'></div>
         <div className='h-[calc(100%-40px)] w-full'>
           <Sidebar />
         </div>
       </aside>
-      <section className='h-full w-[calc(100%-192px)] '>
+      <section className='h-full w-full xl:w-[calc(100%-192px)] '>
         <div className='h-10 flex flex-wrap'>
-          <div className=' flex-none w-1/2 flex items-center'>
-            <h1 className='text-2xl font-bold px-4'>LostArk Strategies</h1>
+          <div className=' flex-none w-1/4 xl:w-1/2 items-center flex'>
+            <a href='/LostArk-Strategies/' onClick={onHref}>
+              <h1 className='text-2xl font-bold px-4 hidden xl:flex'>
+                LostArk Strategies
+              </h1>
+              <h1 className='text-2xl font-bold px-4 flex xl:hidden'>LAS</h1>
+            </a>
+          </div>
+          <div className='flex-none w-3/4 xl:w-1/2 flex justify-end items-center'>
+            <ul className='flex'>
+              <li className='mx-8'>
+                <a href='#' onClick={onMenu}>
+                  <MenuOutlined style={{ fontSize: '32px', color: 'white' }} />
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
-        <div className='h-[calc(100%-40px)] w-full bg-black p-4'>
-          <div className='w-full h-full bg-gray-500/30 rounded-md'>
-            {component}
+        <div className='h-[calc(100%-40px)] w-full bg-black p-4 overflow-y-auto'>
+          <div className='w-full h-full bg-gray-500/20 rounded-md'>
+            {Component}
           </div>
         </div>
       </section>
+      <Drawer
+        placement={'right'}
+        closable={false}
+        onClose={() => setOpen(false)}
+        open={open}
+        key={'right'}
+        width={'70%'}
+      >
+        <Sidebar />
+      </Drawer>
     </div>
   );
 };

@@ -12,11 +12,26 @@ body {
 #root {
   height: 100%;
   width: 100%;
-  color: white;
+  color: whitesmoke;
 }
 .ant-menu-dark.ant-menu-inline .ant-menu-sub.ant-menu-inline {
   background: none;
 }
 .ant-menu-submenu-title {
   margin: 0 !important;
+}
+.ant-table-cell {
+  color: whitesmoke !important;
+  background-color: rgb(24, 24, 27, 0.95) !important;
+}
+.ant-empty-description {
+  color: whitesmoke !important;
+}
+.ant-table-cell-row-hover {
+  background-color: rgb(24, 24, 27, 0.85) !important;
+  border-radius: 0px !important;
+}
+.ant-drawer-body {
+  padding: 4px !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
 }
