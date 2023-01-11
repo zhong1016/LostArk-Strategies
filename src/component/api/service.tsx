@@ -1,4 +1,9 @@
-const baseURL = '/public/api/v1';
+const hostname =
+  location.hostname === 'zhong1016.github.io'
+    ? '/LostArk-Strategies'
+    : '/public';
+
+const baseURL = hostname + '/api/v1';
 
 const useService = () => {
   // 因為只有 GET Public , 所以只微封裝 fetch

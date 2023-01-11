@@ -21,6 +21,7 @@ const useService = () => {
   const MenuItems: MenuItem[] = [
     getItem('遊戲資訊', 'game', undefined, [
       getItem('好友度', 'game/favorability'),
+      getItem('冒險之書', 'game/adventureBook'),
     ]),
   ];
 

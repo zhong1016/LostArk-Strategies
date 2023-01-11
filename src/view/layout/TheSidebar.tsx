@@ -17,11 +17,15 @@ const Sidebar = () => {
    * state
    */
   const [selectedKey, setSelectedKey] = useState('');
+  const [openKeys, setOpenKeys] = useState(['game']);
   /**
    * func
    */
   const onMenu = (path: string) => {
     navigate(`/LostArk-Strategies/${path}`);
+  };
+  const onOpenKeys = (key: string[]) => {
+    setOpenKeys(key);
   };
 
   /**
@@ -39,10 +43,11 @@ const Sidebar = () => {
   return (
     <Menu
       className='bg-zinc-800'
+      onOpenChange={onOpenKeys}
       onClick={(e) => onMenu(e.key)}
       mode='inline'
       theme='dark'
-      openKeys={['game']}
+      openKeys={openKeys}
       selectedKeys={[selectedKey]}
       items={MenuItems}
     />

@@ -13,6 +13,13 @@ const GameRoutes = () => {
         title: '好友度 | LostArk Strategies 失落的方舟攻略網',
       },
     },
+    {
+      path: '/LostArk-Strategies/game/adventureBook',
+      element: lazyLoad(React.lazy(() => import('@/view/game/AdventureBook'))),
+      meta: {
+        title: '冒險之書 | LostArk Strategies 失落的方舟攻略網',
+      },
+    },
   ];
   return routes;
 };

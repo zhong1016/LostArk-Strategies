@@ -1,7 +1,7 @@
 import { MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer } from 'antd';
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Sidebar from './TheSidebar';
 
 interface ContentIn {
@@ -13,6 +13,7 @@ const Content: React.FC<ContentIn> = ({ Component }: ContentIn) => {
    * hook
    */
   const navigate = useNavigate();
+  const location = useLocation();
   /**
    * state
    */
@@ -28,6 +29,13 @@ const Content: React.FC<ContentIn> = ({ Component }: ContentIn) => {
     setOpen(true);
     e.preventDefault();
   };
+
+  /**
+   * Effect
+   */
+  useEffect(() => {
+    setOpen(false);
+  }, [location]);
 
   return (
     <div className='w-full h-full flex '>
@@ -50,14 +58,18 @@ const Content: React.FC<ContentIn> = ({ Component }: ContentIn) => {
           <div className='flex-none w-3/4 xl:w-1/2 flex justify-end items-center'>
             <ul className='flex'>
               <li className='mx-8'>
-                <a href='#' onClick={onMenu}>
+                <a
+                  href='#'
+                  className='active:relative top-1 xl:hidden'
+                  onClick={onMenu}
+                >
                   <MenuOutlined style={{ fontSize: '32px', color: 'white' }} />
                 </a>
               </li>
             </ul>
           </div>
         </div>
-        <div className='h-[calc(100%-40px)] w-full bg-black p-4 overflow-y-auto'>
+        <div className='h-[calc(100%-40px)] w-full bg-black p-1 xl:p-4 overflow-y-auto'>
           <div className='w-full h-full bg-gray-500/20 rounded-md'>
             {Component}
           </div>

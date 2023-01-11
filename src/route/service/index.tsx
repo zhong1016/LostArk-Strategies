@@ -7,11 +7,10 @@ const useService = () => {
    * hook
    */
   const location = useLocation();
-  console.log(location.pathname);
+
   // Route BeforeEach
   const beforeEach = (route: RouteObjectIn[]): RouteObjectIn[] => {
     route.forEach((to) => {
-      console.log(to.path);
       // 判斷 path
       if (to.path === location.pathname) {
         document.title = to.meta.title;

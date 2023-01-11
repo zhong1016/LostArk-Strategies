@@ -40,7 +40,7 @@ const Favorability = () => {
       <div className=' flex flex-wrap'>
         <div className='flex-none w-1/2'>
           <div className='font-bold m-4 text-xl border-l-4 border-red-500'>
-            <span className='px-2'> 好感度</span>
+            <span className='px-2'> 好感度 </span>
           </div>
         </div>
       </div>
