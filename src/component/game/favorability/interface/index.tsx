@@ -7,7 +7,7 @@
 // "maxAffinity": "最大好感度",
 // "normal": "普通",
 
-interface favorabilityIn {
+interface FavorabilityIn {
   npc: string;
   location: string;
   love: string;
@@ -19,4 +19,8 @@ interface favorabilityIn {
   key?: React.Key;
 }
 
-export { type favorabilityIn };
+interface FavorabilityCompIn {
+  favorabilityData: FavorabilityIn[];
+}
+
+export { type FavorabilityIn, type FavorabilityCompIn };

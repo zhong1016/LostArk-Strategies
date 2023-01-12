@@ -1,10 +1,9 @@
-import { Table } from 'antd';
 import { useEffect, useState } from 'react';
 import FavorabilityMobile from './common/FavorabilityMobile';
 import FavorabilityPC from './common/FavorabilityPC';
-import { favorabilityIn } from './interface';
+import { FavorabilityIn } from './interface';
 import useService from './service';
-const { Column } = Table;
+
 const Favorability = () => {
   /**
    * hook
@@ -14,11 +13,11 @@ const Favorability = () => {
   /**
    * state
    */
-  const [favorabilityData, setFavorabilityData] = useState<favorabilityIn[]>(
+  const [favorabilityData, setFavorabilityData] = useState<FavorabilityIn[]>(
     []
   );
   const [favorabilityMobileData, setFavorabilityMobileData] = useState<
-    favorabilityIn[]
+    FavorabilityIn[]
   >([]);
 
   /**

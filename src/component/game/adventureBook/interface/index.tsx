@@ -1,22 +1,29 @@
-// "npc": "NPC",
-// "location": "位置",
-// "love": "愛情",
-// "attention": "關注",
-// "friendly": "友好",
-// "trust": "信賴"
-// "maxAffinity": "最大好感度",
-// "normal": "普通",
+// "adventureBook": "冒險之書",
+// "eightyPercent": "80%",
+// "fiftyPercent": "50%",
+// "fortyPercent": "40%",
+// "ninetyPercent": "90%",
+// "seventyPercent": "70%",
+// "sixtyPercent": "60%",
+// "tenPercent": "10%",
+// "thirtyPercent": "30%",
+// "twentyPercent": "20%"
 
-interface favorabilityIn {
-  npc: string;
-  location: string;
-  love: string;
-  attention: string | string[];
-  friendly: string | string[];
-  trust: string | string[];
-  maxAffinity: string;
-  normal: string;
+interface AdventureBookIn {
+  adventureBook: string;
+  eightyPercent: string;
+  fiftyPercent: string;
+  fortyPercent: string;
+  ninetyPercent: string;
+  seventyPercent: string;
+  sixtyPercent: string;
+  tenPercent: string;
+  thirtyPercent: string;
+  twentyPercent: string;
   key?: React.Key;
 }
 
-export { type favorabilityIn };
+interface AdventureBookCompIn {
+  adventureBookData: AdventureBookIn[];
+}
+export { type AdventureBookIn, type AdventureBookCompIn };

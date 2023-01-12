@@ -1,19 +1,33 @@
-import { Table } from 'antd';
 import { useEffect, useState } from 'react';
+import { AdventureBookIn } from './interface';
 import useService from './service';
-const Favorability = () => {
+import AdventureBookPC from './common/AdventureBookPC';
+import AdventureBookMobile from './common/AdventureBookMobile';
+const AdventureBook = () => {
   /**
    * hook
    */
-  const { getFavorability, getDataSplit } = useService();
+  const { getAdventureBook } = useService();
+
+  /**
+   * state
+   */
+  const [adventureBookData, setAdventureBookData] = useState<AdventureBookIn[]>(
+    []
+  );
 
   /**
    * Effect
    */
-  useEffect(() => {}, []);
+  useEffect(() => {
+    init();
+  }, []);
 
   // init
-  const init = async () => {};
+  const init = async () => {
+    let res = await getAdventureBook();
+    setAdventureBookData(res);
+  };
 
   return (
     <div className='w-full'>
@@ -24,11 +38,21 @@ const Favorability = () => {
           </div>
         </div>
       </div>
-      <h1>Test</h1>
-      <h1>Test</h1>
-      <h1>Test</h1>
+      <AdventureBookPC adventureBookData={adventureBookData} />
+      <AdventureBookMobile adventureBookData={adventureBookData} />
     </div>
   );
 };
 
-export default Favorability;
+// "adventureBook": "冒險之書",
+// "eightyPercent": "80%",
+// "fiftyPercent": "50%",
+// "fortyPercent": "40%",
+// "ninetyPercent": "90%",
+// "seventyPercent": "70%",
+// "sixtyPercent": "60%",
+// "tenPercent": "10%",
+// "thirtyPercent": "30%",
+// "twentyPercent": "20%"
+
+export default AdventureBook;

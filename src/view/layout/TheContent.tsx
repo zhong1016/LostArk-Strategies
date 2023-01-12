@@ -1,4 +1,4 @@
-import { MenuOutlined } from '@ant-design/icons';
+import { GithubOutlined, MenuOutlined } from '@ant-design/icons';
 import { Button, Drawer } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -57,6 +57,16 @@ const Content: React.FC<ContentIn> = ({ Component }: ContentIn) => {
           </div>
           <div className='flex-none w-3/4 xl:w-1/2 flex justify-end items-center'>
             <ul className='flex'>
+              <li className='mx-8'>
+                <a
+                  href='https://github.com/zhong1016/LostArk-Strategies'
+                  target={'_blank'}
+                >
+                  <GithubOutlined
+                    style={{ fontSize: '28px', color: 'white' }}
+                  />
+                </a>
+              </li>
               <li className='mx-8'>
                 <a
                   href='#'

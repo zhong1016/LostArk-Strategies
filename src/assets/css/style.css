@@ -36,3 +36,9 @@ body {
   padding: 4px !important;
   background-color: rgba(0, 0, 0, 0.9) !important;
 }
+.ant-spin-blur {
+  opacity: 0.2 !important;
+}
+.ant-spin-spinning {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}

@@ -1,27 +1,19 @@
 import useQuery from '@/component/api/query';
-import { favorabilityIn } from '../interface';
+import { AdventureBookIn } from '../interface';
 
 const useService = () => {
   const { api, get } = useQuery();
 
-  const getFavorability = async (): Promise<favorabilityIn[]> => {
-    let res = await get<favorabilityIn[]>(api.favorabilities);
-
-    return res.map((e, i) => {
-      e.key = i;
+  const getAdventureBook = async (): Promise<AdventureBookIn[]> => {
+    let res = await get<AdventureBookIn[]>(api.adventureBook);
+    return res.map((e) => {
+      // set uuid
+      e.key = window.crypto.randomUUID();
       return e;
     });
   };
 
-  const getDataSplit = (data: favorabilityIn[]): favorabilityIn[] => {
-    return data.map((e, i) => {
-      e.attention = e.attention.toString().split('、');
-      e.friendly = e.friendly.toString().split('、');
-      e.trust = e.trust.toString().split('、');
-      return e;
-    });
-  };
-  return { getFavorability, getDataSplit };
+  return { getAdventureBook };
 };
 
 export default useService;

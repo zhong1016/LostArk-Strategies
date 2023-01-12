@@ -1,24 +1,28 @@
+import { RootState } from '@/store';
 import { Table } from 'antd';
 import React from 'react';
-import { favorabilityIn } from '../interface';
+import { useSelector } from 'react-redux';
+import { FavorabilityCompIn, FavorabilityIn } from '../interface';
 const { Column } = Table;
 
-interface favorabilityDataIn {
-  favorabilityData: favorabilityIn[];
-}
-
-const FavorabilityPC: React.FC<favorabilityDataIn> = ({
+const FavorabilityPC: React.FC<FavorabilityCompIn> = ({
   favorabilityData,
-}: favorabilityDataIn) => {
+}: FavorabilityCompIn) => {
+  /**
+   * store
+   */
+  const { loading } = useSelector((store: RootState) => store.loading);
+
   return (
     <Table
       dataSource={favorabilityData}
       pagination={false}
       className='hidden xl:block w-full'
+      loading={loading}
     >
       <Column
         title='Npc'
-        render={(value: any, record: favorabilityIn) => {
+        render={(record: FavorabilityIn) => {
           return (
             <div>
               <p>{record.npc}</p>
@@ -30,7 +34,7 @@ const FavorabilityPC: React.FC<favorabilityDataIn> = ({
       />
       <Column
         title='關注'
-        render={(value: any, record: favorabilityIn) => {
+        render={(record: FavorabilityIn) => {
           let arr = record.attention as string[];
           return (
             <>
@@ -43,7 +47,7 @@ const FavorabilityPC: React.FC<favorabilityDataIn> = ({
       />
       <Column
         title='友好'
-        render={(value: any, record: favorabilityIn) => {
+        render={(record: FavorabilityIn) => {
           let arr = record.friendly as string[];
           return (
             <>
@@ -63,7 +67,7 @@ const FavorabilityPC: React.FC<favorabilityDataIn> = ({
       <Column title='普通' dataIndex='normal' key='normal' />
       <Column
         title='信賴'
-        render={(value: any, record: favorabilityIn) => {
+        render={(value, record: FavorabilityIn) => {
           let arr = record.trust as string[];
           return (
             <>
