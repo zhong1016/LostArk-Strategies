@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import FavorabilityMobile from './common/FavorabilityMobile';
 import FavorabilityPC from './common/FavorabilityPC';
-import { FavorabilityIn } from './interface';
-import useService from './service';
+import useService, { FavorabilityIn } from './service';
 
 const Favorability = () => {
   /**

@@ -5,8 +5,8 @@ import useService from './service';
 const useQuery = () => {
   const { onFetch } = useService();
 
-  const get = async <T,>(api: string): Promise<T> => {
-    return onFetch<T>(api);
+  const get = async <T,>(api: string, param: string = ''): Promise<T> => {
+    return onFetch<T>(api + param);
   };
 
   const post = async <T,>(api: string, body: BodyInit): Promise<T> => {

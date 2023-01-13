@@ -1,5 +1,22 @@
 import useQuery from '@/component/api/query';
-import { AdventureBookIn } from '../interface';
+
+export interface AdventureBookIn {
+  adventureBook: string;
+  eightyPercent: string;
+  fiftyPercent: string;
+  fortyPercent: string;
+  ninetyPercent: string;
+  seventyPercent: string;
+  sixtyPercent: string;
+  tenPercent: string;
+  thirtyPercent: string;
+  twentyPercent: string;
+  key?: React.Key;
+}
+
+export interface AdventureBookCompIn {
+  adventureBookData: AdventureBookIn[];
+}
 
 const useService = () => {
   const { api, get } = useQuery();

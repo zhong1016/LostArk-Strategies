@@ -2,7 +2,7 @@ import { RootState } from '@/store';
 import { Table } from 'antd';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { AdventureBookCompIn, AdventureBookIn } from '../interface';
+import { AdventureBookCompIn, AdventureBookIn } from '../service';
 const { Column } = Table;
 
 const AdventureBookMobile: React.FC<AdventureBookCompIn> = ({

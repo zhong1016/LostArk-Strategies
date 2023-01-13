@@ -1,4 +1,6 @@
-import { MenuItem } from '../interface';
+import { MenuProps } from 'antd';
+
+type MenuItem = Required<MenuProps>['items'][number];
 
 const getItem = (
   label: React.ReactNode,

@@ -1,7 +1,7 @@
 import { Menu } from 'antd';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import useService from './service/index';
+import useService from './service';
 
 const Sidebar = () => {
   /**

@@ -1,5 +1,20 @@
 import useQuery from '@/component/api/query';
-import { FavorabilityIn } from '../interface';
+
+export interface FavorabilityIn {
+  npc: string;
+  location: string;
+  love: string;
+  attention: string | string[];
+  friendly: string | string[];
+  trust: string | string[];
+  maxAffinity: string;
+  normal: string;
+  key?: React.Key;
+}
+
+export interface FavorabilityCompIn {
+  favorabilityData: FavorabilityIn[];
+}
 
 const useService = () => {
   const { api, get } = useQuery();

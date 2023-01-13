@@ -2,7 +2,7 @@ import { RootState } from '@/store';
 import { Table } from 'antd';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { FavorabilityCompIn, FavorabilityIn } from '../interface';
+import { FavorabilityCompIn, FavorabilityIn } from '../service';
 const { Column } = Table;
 
 const FavorabilityPC: React.FC<FavorabilityCompIn> = ({

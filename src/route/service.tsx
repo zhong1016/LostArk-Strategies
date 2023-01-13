@@ -1,6 +1,15 @@
-import { Suspense } from 'react';
 import { useLocation } from 'react-router-dom';
-import { RouteObjectIn } from '../interface';
+
+import { NonIndexRouteObject } from 'react-router-dom';
+
+export interface RouteObjectIn extends NonIndexRouteObject {
+  meta: MetaIn;
+  children?: RouteObjectIn[];
+}
+
+interface MetaIn {
+  title: string;
+}
 
 const useService = () => {
   /**
@@ -19,15 +28,7 @@ const useService = () => {
     return route;
   };
 
-  // lazy
-  const lazyLoad = (Comp: React.LazyExoticComponent<any>): React.ReactNode => {
-    return (
-      <Suspense fallback={<></>}>
-        <Comp />
-      </Suspense>
-    );
-  };
-  return { beforeEach, lazyLoad };
+  return { beforeEach };
 };
 
 export default useService;

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { AdventureBookIn } from './interface';
-import useService from './service';
+import useService, { AdventureBookIn } from './service';
 import AdventureBookPC from './common/AdventureBookPC';
 import AdventureBookMobile from './common/AdventureBookMobile';
+
 const AdventureBook = () => {
   /**
    * hook
