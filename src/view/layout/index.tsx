@@ -1,5 +1,5 @@
-import TheSidebar from '@/component/Layout/TheSidebar';
-import TheContent from '@/component/Layout/TheContent';
+import TheSidebar from '@/component/layout/TheSidebar';
+import TheContent from '@/component/layout/TheContent';
 
 interface ContentIn {
   Component: React.ReactNode;

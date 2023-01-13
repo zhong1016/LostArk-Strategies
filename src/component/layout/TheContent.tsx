@@ -1,5 +1,5 @@
 import { GithubOutlined, MenuOutlined } from '@ant-design/icons';
-import { Button, Drawer } from 'antd';
+import { Drawer } from 'antd';
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Sidebar from './TheSidebar';
