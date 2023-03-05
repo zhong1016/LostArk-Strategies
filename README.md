@@ -10,12 +10,12 @@
 
 ### 技術工具 ✨
 
-- React 18 + TypeScript : 靈活、穩定、易於維護的開發方式
+- React 18 + TypeScript : 靈活、穩定的 hook 與更好的類型檢查
 - React-Router : 方便管理複雜的應用程序路由
-- React-Redux : 輕鬆實現狀態管理和數據共享
-- Ant Design : 豐富的 UI 組件庫，可加速前端開發
-- Tailwind CSS : 可自定義的快速佈局和靈活的樣式管理
-- Vite : 快速的開發環境和高效的打包工具，提高開發效率和性能
+- React-Redux : 實現 loading 狀態管理
+- Ant Design : 使用部分 UI 組件
+- Tailwind CSS : 自定義 layout 與更快速的撰寫樣式
+- Vite : 快速的開發環境和高效的打包工具
 
 ### API ✨
 
