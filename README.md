@@ -1,15 +1,51 @@
-# Lost Ark Strategies
+# LostArk-Strategies
 
-Welcome to Lost Ark Strategies, the ultimate resource for tips, tricks, and strategies for the popular online game, Lost Ark. Our website is filled with in-depth guides, useful resources, and the latest news on all things Lost Ark. Whether you're a beginner looking for guidance or an experienced player seeking new challenges, we have something for everyone. Join us and emerge victorious!
+### 介绍 ⭐
 
-## Getting Started
+歡迎來到 Lost Ark Strategies，此作品為失落的方舟攻略網，提供遊戲道具、NPC、物品機率等資訊，但因台服開服即關服所以停滯，願台服早日回歸，讓此作品更完整。
 
-To get started, simply explore our website and discover all the helpful content we have to offer. You can also sign up for our newsletter to receive updates on new guides and resources.
+### 網站預覽 ⭐
 
-## Contributing
+- Link : https://zhong1016.github.io/LostArk-Strategies/
 
-We welcome contributions from the community! If you have a guide or resource that you think would be helpful to other players, please don't hesitate to reach out to us. Simply send us a message through our contact form and we'll review your submission.
+### 技術工具 ⭐
 
-## Support
+- React 18 + TypeScript : 靈活、穩定、易於維護的開發方式
+- React-Router : 方便管理複雜的應用程序路由
+- React-Redux : 輕鬆實現狀態管理和數據共享
+- Ant Design : 豐富的 UI 組件庫，可加速前端開發
+- Tailwind CSS : 可自定義的快速佈局和靈活的樣式管理
+- Vite : 快速的開發環境和高效的打包工具，提高開發效率和性能
 
-If you have any questions or need help with anything, please don't hesitate to contact us through our support page. We're always happy to help.
+### API ⭐
+
+- 使用 public / api / v1 / \*.json 當作後台資料
+
+### 目錄結構 ⭐
+
+```text
+- public                # 存放公共靜態文件，如圖片、字體等
+  - api                 # 作品 API
+- src                   # 存放項目源代碼
+  - assets              # 靜態資源文件夾，如圖片、字體等
+  - components          # 通用組件
+  - route               # 路由配置文件夾
+  - store               # 全局狀態管理文件夾
+  - view                # 頁面文件夾
+  - main.tsx            # 項目入口文件
+  - vite-env.d.ts       # Vite 环境变量类型声明文件
+- .gitignore            # Git 忽略文件配置
+- README.md             # 項目說明文檔
+- index.html            # HTML 模板文件
+- package-lock.json     # npm 包版本管理文件
+- package.json          # 項目依賴管理文件
+- postcss.config.cjs    # PostCSS 配置文件
+- tailwind.config.cjs   # Tailwind CSS 配置文件
+- tsconfig.json         # TypeScript 基礎配置文件
+- tsconfig.node.json    # TypeScript Node.js 配置文件
+- vite.config.ts        # Vite 配置文件
+```
+
+### 最後 ⭐
+
+如果此作品有幫助到你/妳，請給我一個 Star！它會使我更有動力：）
