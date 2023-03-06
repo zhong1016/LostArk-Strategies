@@ -10,7 +10,7 @@
 
 ### 技術工具 ✨
 
-- React 18 + TypeScript : 靈活、穩定的 hook 與類型檢查
+- React 18 + TypeScript : 靈活、穩定的應用與類型檢查
 - React-Router : 管理複雜的頁面路由
 - React-Redux : 實現 loading 狀態管理
 - Ant Design : 使用 UI 組件
